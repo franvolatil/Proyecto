@@ -1,0 +1,42 @@
+{% extends 'prototipo/base.html' %}
+
+{% block content %}
+    <div class="starter-template">
+        <h1>Señal</h1>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+
+                <div class="col-xs-12">
+                    <a class="btn btn-primary btn-lg activ" href="{% url 'Prototipo.views.sismo_new'%}" role="button">Nueva señal</a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-md-8">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+
+                    {% for sismo in sismos %}
+                        <tr>
+                            <th scope="row">{{ sismo.id }}</th>
+                            <th>{{ sismo.title }}</th>
+                            <th>{{ sismo.created_date }}</th>
+                            <th><a class="btn btn-default" href="#" role="button">Descargar</a>
+                                <a class="btn btn-default" href="{% url 'sismo_edit' pk=sismo.pk %}" role="button">Editar</a>
+                                <a class="btn btn-default" href="{% url 'sismo_remove' pk=sismo.pk %}" role="button">Borrar</a>
+                                <a class="btn btn-default" href="ver.html" role="button">Ver</a>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
