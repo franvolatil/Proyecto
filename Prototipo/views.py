@@ -1,10 +1,12 @@
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
+
+from Prototipo.forms import PostForm
+from Prototipo.forms import SismoForm
+from Prototipo.forms import UploadFileForm
 from .models import Post
 from .models import Sismo
-from .forms import PostForm
-from .forms import SismoForm
 
 
 def post_list(request):
@@ -58,7 +60,7 @@ def sismo_detail(request, pk):
 
 def sismo_new(request):
     if request.method == "POST":
-        form = SismoForm(request.POST)
+        form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
           sismo = form.save(commit=False)
           sismo.author = request.user
@@ -68,8 +70,9 @@ def sismo_new(request):
           return redirect('Prototipo.views.sismos_list')
 
     else:
-         form = SismoForm()
+         form = UploadFileForm()
     return render(request, 'prototipo/sismo_edit.html', {'form': form})
+
 
 def sismo_edit(request, pk):
     sismo = get_object_or_404(Sismo, pk=pk)

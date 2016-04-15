@@ -1,5 +1,7 @@
 from django.conf.urls import include, url
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.post_list),
@@ -12,3 +14,6 @@ urlpatterns = [
     url(r'^sismos/(?P<pk>[0-9]+)/edit/$', views.sismo_edit, name='sismo_edit'),
     url(r'^sismos/(?P<pk>\d+)/remove/$', views.sismo_remove, name='sismo_remove'),
 ]
+
+
+              #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -120,3 +120,8 @@ STATICFILES_DIRS = (
     os.path.join(RUTA_PROYECTO,'static'),
 )
 
+STATIC_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'static')
+
+FILE_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'file')
+
+
