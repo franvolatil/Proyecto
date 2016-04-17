@@ -15,4 +15,4 @@ class SismoForm(forms.ModelForm):
 class UploadFileForm(forms.ModelForm):
     class Meta:
         model = UploadFile
-        fields = ('title','file',)
+        fields = ('title','media',)

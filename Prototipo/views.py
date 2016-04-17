@@ -7,7 +7,7 @@ from Prototipo.forms import SismoForm
 from Prototipo.forms import UploadFileForm
 from .models import Post
 from .models import Sismo
-
+from .models import UploadFile
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -60,7 +60,7 @@ def sismo_detail(request, pk):
 
 def sismo_new(request):
     if request.method == "POST":
-        form = UploadFileForm(request.POST, request.FILES)
+        form = SismoForm(request.POST, request.FILES)
         if form.is_valid():
           sismo = form.save(commit=False)
           sismo.author = request.user

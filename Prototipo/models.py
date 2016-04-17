@@ -41,7 +41,7 @@ class UploadFile(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    file = models.FileField(upload_to='Proyecto/', blank=True)
+    media = models.FileField(upload_to='myfolder/', blank=True)
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
