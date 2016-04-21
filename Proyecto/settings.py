@@ -87,8 +87,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'prueba',
 		'USER': 'root',
-		'PASSWORD': 'francisca7',
-		'HOST': 'localhost',
+		'PASSWORD': '',
+		'HOST': '127.0.0.1',
 		'PORT': '3306',
     }
 }
@@ -122,6 +122,11 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'static')
 
-MEDIA_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'media')
+EJE_X_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'eje x')
+
+EJE_Y_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'eje y')
+
+EJE_Z_ROOT = os.path.join(os.path.dirname(RUTA_PROYECTO),'eje z')
+
 
 

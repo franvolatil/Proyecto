@@ -32,7 +32,7 @@
                             <th><a class="btn btn-default" href="#" role="button">Descargar</a>
                                 <a class="btn btn-default" href="{% url 'sismo_edit' pk=sismo.pk %}" role="button">Editar</a>
                                 <a class="btn btn-default" href="{% url 'sismo_remove' pk=sismo.pk %}" role="button">Borrar</a>
-                                <a class="btn btn-default" href="ver.html" role="button">Ver</a>
+                                <a class="btn btn-default" href="{% url 'sismo_detail' pk=sismo.pk %}" role="button">Ver</a>
                         </tr>
                     {% endfor %}
                 </table>

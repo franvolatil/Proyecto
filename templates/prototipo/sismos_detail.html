@@ -1,0 +1,89 @@
+{% extends 'prototipo/base.html' %}
+
+{% block content %}
+        <h1>Señal</h1>
+
+    <div class="starter-template">
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+
+                <div class="col-xs-12">
+
+                    <div id="grap1" style="width: 500px; height: 200px; margin: 0 auto"></div>
+                    <div id="grap2" style="width: 500px; height: 200px; margin: 0 auto"></div>
+                    <div id="grap3" style="width: 500px; height: 200px; margin: 0 auto"></div>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-2">
+
+                <div id="dialog" title="Filtros" style="display:none;">
+                    <button class="btn btn-default" >Pasa bajo</button>
+                    <button class="btn btn-default" >Pasa alto</button>
+                    <a class="btn btn-default" href="ver1.html" role="button">Bandstop</a>
+                    <button class="btn btn-default" >Pasa banda</button>
+                </div>
+
+                <button class="btn btn-default" onclick="abrir_dialog()">Aplicar filtro</button>
+
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th scope="row">C</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">GO01</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">location</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">BHE</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2014-04-04T09.56.55.000Ze</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2014-04-05T09.56.55.200Z</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">30.0</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">0.025</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">3863692</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1.0</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">SAC</th>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+{% endblock content%}

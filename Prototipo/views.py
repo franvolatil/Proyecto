@@ -4,10 +4,10 @@ from django.utils import timezone
 
 from Prototipo.forms import PostForm
 from Prototipo.forms import SismoForm
-from Prototipo.forms import UploadFileForm
+#from Prototipo.forms import UploadFileForm
 from .models import Post
 from .models import Sismo
-from .models import UploadFile
+#from .models import UploadFile
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -70,7 +70,7 @@ def sismo_new(request):
           return redirect('Prototipo.views.sismos_list')
 
     else:
-         form = UploadFileForm()
+         form = SismoForm()
     return render(request, 'prototipo/sismo_edit.html', {'form': form})
 
 
@@ -91,3 +91,8 @@ def sismo_remove(request, pk):
     sismo = get_object_or_404(Sismo, pk=pk)
     sismo.delete()
     return redirect('Prototipo.views.sismos_list')
+
+def sismo_detail(request, pk):
+    sismo = get_object_or_404(Sismo, pk=pk)
+    return render(request, 'prototipo/sismos_detail.html', {'sismo': sismo})
+
