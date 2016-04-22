@@ -7,6 +7,9 @@ from Prototipo.forms import SismoForm
 from .models import Post
 from .models import Sismo
 from obspy.core import read
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import signal
 
 
 
@@ -127,3 +130,18 @@ def header(sismo):
     sismo.format = tr.stats._format
 
     return sismo
+
+def grafico():
+
+    st = read('myfolder/C.GO01..BHE.M__at__2014-04-04T09.56.55.000Z.SAC')
+    xx = st[0]
+    cx = np.array(xx.data)
+    ntx = signal.detrend(cx)
+    ax1.plot(ntx)
+
+    XY = []
+    for lines in plt.gca().get_lines():
+        for x, y in lines.get_xydata():
+            XY.append([x,y])
+
+    return HttpResponse(simplejson.dumps(XY), mimetype='application/json')

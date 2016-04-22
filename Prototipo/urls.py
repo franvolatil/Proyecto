@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^sismos/(?P<pk>[0-9]+)/edit/$', views.sismo_edit, name='sismo_edit'),
     url(r'^sismos/(?P<pk>\d+)/remove/$', views.sismo_remove, name='sismo_remove'),
     url(r'^sismos/(?P<pk>\d+)/detail/$', views.sismo_detail, name='sismo_detail'),
+    url(r'^sismos/grafico/$', views.grafico, name='grafico'),
 ]
