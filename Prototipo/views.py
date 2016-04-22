@@ -4,10 +4,11 @@ from django.utils import timezone
 
 from Prototipo.forms import PostForm
 from Prototipo.forms import SismoForm
-#from Prototipo.forms import UploadFileForm
 from .models import Post
 from .models import Sismo
-#from .models import UploadFile
+from obspy.core import read
+
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -67,6 +68,8 @@ def sismo_new(request):
           sismo.published_date = timezone.now()
           sismo.text = 'asdf'
           sismo.save()
+          header(sismo)
+          sismo.save()
           return redirect('Prototipo.views.sismos_list')
 
     else:
@@ -96,3 +99,31 @@ def sismo_detail(request, pk):
     sismo = get_object_or_404(Sismo, pk=pk)
     return render(request, 'prototipo/sismos_detail.html', {'sismo': sismo})
 
+def header(sismo):
+
+    st = read(sismo.eje_x)
+    tr = st[0]
+
+    sismo.network =  tr.stats.network
+
+    sismo.station = tr.stats.station
+
+    sismo.location = tr.stats.location
+
+    sismo.channel = tr.stats.channel
+
+    sismo.starttime = tr.stats.starttime
+
+    sismo.endtime = tr.stats.endtime
+
+    sismo.sampling_rate = tr.stats.sampling_rate
+
+    sismo.delta = tr.stats.delta
+
+    sismo.npts = tr.stats.npts
+
+    sismo.calib = tr.stats.calib
+
+    sismo.format = tr.stats._format
+
+    return sismo

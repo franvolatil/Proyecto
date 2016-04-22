@@ -33,47 +33,43 @@
             <div class="col-xs-6 col-md-4">
                 <table class="table table-striped">
                     <tr>
-                        <th scope="row">C</th>
+                        <th scope="row"> Network: {{ sismo.network }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">GO01</th>
+                        <th scope="row"> {{ sismo.station }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">location</th>
+                        <th scope="row"> {{ sismo.channel }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">BHE</th>
+                        <th scope="row"> {{ sismo.starttime }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">2014-04-04T09.56.55.000Ze</th>
+                        <th scope="row"> {{ sismo.endtime }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">2014-04-05T09.56.55.200Z</th>
+                        <th scope="row"> {{sismo.sampling_rate }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">30.0</th>
+                        <th scope="row"> {{ sismo.delta }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">0.025</th>
+                        <th scope="row">{{ sismo.npts }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">3863692</th>
+                        <th scope="row">{{ sismo.calib }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">1.0</th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">SAC</th>
+                        <th scope="row"> {{ sismo.format }}</th>
                     </tr>
 
                 </table>
