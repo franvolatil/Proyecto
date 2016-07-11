@@ -73,7 +73,7 @@ def sismo_new(request):
           sismo = form.save(commit=False)
           sismo.author = request.user
           sismo.published_date = timezone.now()
-          sismo.text = 'asdf'
+          sismo.text = 'myfolder'
           sismo.save()
           header(sismo)
           sismo.save()
