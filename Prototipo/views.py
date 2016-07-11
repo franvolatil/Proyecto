@@ -1,3 +1,6 @@
+
+import json
+
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
@@ -10,6 +13,7 @@ from obspy.core import read
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
+from django.core import serializers
 
 
 
@@ -144,4 +148,40 @@ def grafico():
         for x, y in lines.get_xydata():
             XY.append([x,y])
 
-    return HttpResponse(simplejson.dumps(XY), mimetype='application/json')
+   # return HttpResponse(simplejson.dumps(XY), mimetype='application/json')
+
+
+    return json.dumps(["string", 1, 2.5, None])
+
+
+def tasks_json(request):
+    tasks = Task.objects.all()
+    data = serializers.serialize("json", tasks)
+    return HttpResponse(data, content_type='application/json')
+
+
+def chart_data_json(request):
+    data = {}
+    params = request.GET
+
+    days = params.get('days', 0)
+    name = params.get('name', '')
+    if name == 'avg_by_day':
+        data['chart_data'] = ChartData.get_avg_by_day(
+            user=request.user, days=int(days))
+
+    return HttpResponse(json.dumps(data), content_type='application/json')
+
+
+def get_avg_by_day():
+
+    datos = [1,2,3,4,5,6]
+
+
+
+    data = {'dates': [], 'values': []}
+    for a in datos:
+        data['dates'].append(a['record_date'].strftime('%m/%d'))
+        data['values'].append(core.utils.round_value(a['avg_value']))
+
+    return data

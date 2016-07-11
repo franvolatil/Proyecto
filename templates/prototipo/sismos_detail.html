@@ -33,43 +33,46 @@
             <div class="col-xs-6 col-md-4">
                 <table class="table table-striped">
                     <tr>
-                        <th scope="row"> Network: {{ sismo.network }}</th>
+                        <th scope="row"> Red sísmica: {{ sismo.network }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.station }}</th>
+                        <th scope="row"> Estación sísmica: {{ sismo.station }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.channel }}</th>
+                        <th scope="row"> Ubicación: {{ sismo.location }}</th>
+                    </tr>
+                    <tr>
+                        <th scope="row"> Canal: {{ sismo.channel }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.starttime }}</th>
+                        <th scope="row"> Hora y fecha de inicio: {{ sismo.starttime }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.endtime }}</th>
+                        <th scope="row"> Horay fecha de finalización: {{ sismo.endtime }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{sismo.sampling_rate }}</th>
+                        <th scope="row"> Muestras por segundo: {{sismo.sampling_rate }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.delta }}</th>
+                        <th scope="row"> Tiempo entre muestras: {{ sismo.delta }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">{{ sismo.npts }}</th>
+                        <th scope="row"> Muestras totales: {{ sismo.npts }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row">{{ sismo.calib }}</th>
+                        <th scope="row"> Calibración: {{ sismo.calib }}</th>
                     </tr>
 
                     <tr>
-                        <th scope="row"> {{ sismo.format }}</th>
+                        <th scope="row"> Formato: {{ sismo.format }}</th>
                     </tr>
 
                 </table>

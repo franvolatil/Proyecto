@@ -53,6 +53,11 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="{% static 'js/graficos.js' %}"></script>
 
+ <!-- JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{ STATIC_URL }}jquery/jquery.min.js"></script>
+        {% block extrajs %}{% endblock %}
+
     </body>
     </html>
 

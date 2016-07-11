@@ -2,10 +2,10 @@
  * Created by Fran on 12-01-2016.
  */
 $.ajax({
-  url: "test.html",
-  context: document.body
-}).done(function() {
-  $( this ).addClass( "done" );
+  url: "http://127.0.0.1:8000/sismos/grafico/",
+    type: "POST"
+}).done(function(data) {
+ console.log(data);
 });
 
 $(function () {
