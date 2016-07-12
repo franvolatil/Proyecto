@@ -1,7 +1,33 @@
 body {
     padding-top: 50px;
 }
+
+form{
+	background-color: white;
+	width: 280px;
+	padding: 40px 15px;
+	border-radius: 4px;
+}
+
+input[type= "text"]{
+	display: block;
+	border: none;
+	width: 280px;
+	background-color: #eaeaea;
+	padding: 15px 5px;
+	border-radius: 4px;
+}
+
+input[type="file"]{
+    display: block;
+    border: none;
+	width: 280px;
+	padding: 15px 5px;
+	border-radius: 4px;
+}
+
 .starter-template {
     padding: 40px 15px;
     text-align: center;
 }
+
